@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Update system packages
+sudo yum update -y
+
+# Install Docker
+sudo yum install -y docker
+
+# Start Docker service
+sudo service docker start
+
+# Add current user to the Docker group
+sudo usermod -a -G docker ec2-user
+
+# List running Docker containers
+docker ps
+
+# Print a message indicating successful Docker installation
+echo "Successful Docker installation"
